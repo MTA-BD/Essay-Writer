@@ -3,7 +3,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Set the API key for OpenAI
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=st.secrets.keyy)
 
 # Streamlit app title and page configuration
 st.set_page_config(
@@ -33,7 +33,8 @@ def generate_essay(user_prompt):
     return completion.choices[0].message.content
 
 # Execute the OpenAI function with user input
-user_prompt = prmpt
+user_prompt = st.secrets.prmpt
+response = generate_essay(user_prompt)
 
 # Display the output in a container with styling
 st.markdown("<h2 style='color: #7041ce; margin-top: 20px;'>Generated Essay:</h2>", unsafe_allow_html=True)
