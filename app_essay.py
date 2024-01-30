@@ -3,7 +3,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Set the API key for OpenAI
-client = OpenAI(api_key=st.secrets.keyy)
+client = OpenAI(api_key="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")
 
 # Streamlit app title and page configuration
 st.set_page_config(
